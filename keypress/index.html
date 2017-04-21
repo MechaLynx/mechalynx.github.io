@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Keypress tester</title>
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/junction" type="text/css"/> 
+<style id="jsbin-css">
+body
+{
+	background-color:#222;
+	color:#0d0;
+	font-family:'Fira Sans', sans-serif;
+    font-size: 16px;
+}
+
+#display
+{
+	display:block;
+	left:50%;
+	width:auto;
+    font-family: 'JunctionRegular';
+    font-weight: normal;
+    font-style: normal; 
+    font-size: 48px;
+}
+
+.tg
+{
+	border-collapse:collapse;
+	/* border-color:#ccc; */
+	border-spacing:0;
+}
+
+.tg td
+{
+	/* background-color:#fff; */
+	/* border-color:#ccc; */
+	/* border-style:solid; */
+	/* border-width:1px 0; */
+	/* color:#333; */
+	/* font-family:Arial, sans-serif; */
+	/* font-size:14px; */
+	overflow:hidden;
+	padding:10px 12px;
+	word-break:normal;
+}
+
+tr td::first-child {
+    border-right: 1px solid gold;
+}
+
+.tg th
+{
+	/* background-color:#f0f0f0; */
+	/* border-color:#ccc; */
+	/* border-style:solid; */
+    border-top: 1px solid #0d0;
+    border-bottom: 1px solid #0d0;
+	/* border-width:1px 0; */
+	/* color:#333; */
+	/* font-size:14px; */
+	/* font-weight:400; */
+	overflow:hidden;
+	padding:10px 12px;
+	word-break:normal;
+}
+
+.tg .tg-k9ij
+{
+	text-align:center;
+	vertical-align:top;
+}
+
+.tg .tg-isb1
+{
+	/* background-color:#f9f9f9; */
+	text-align:center;
+}
+
+.tg .tg-gq9a
+{
+	text-align:center;
+}
+#container{
+	width: 540px;
+	height: auto;
+	left: calc(50% - 270px);
+	display: block;
+	position: relative;
+	/* border: 1px solid gold; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+table{
+	width: 100%;
+    table-layout: fixed;
+}
+
+pre{
+    width: 100%;
+	text-align: center;
+}
+</style>
+</head>
+<body><div id="container">  <pre id='display'>Press a key</pre>
+<table class="tg">
+  <tr>
+    <th class="tg-k9ij">member</th>
+    <th class="tg-k9ij">value</th>
+    <th class="tg-k9ij">notes</th>
+  </tr>
+  <tr>
+    <td class="tg-isb1">altKey</td>
+    <td id='altKey' class="tg-isb1"></td>
+    <td class="tg-isb1"></td>
+  </tr>
+  <tr>
+    <td class="tg-gq9a">ctrlKey</td>
+    <td id='ctrlKey' class="tg-gq9a"></td>
+    <td class="tg-gq9a"></td>
+  </tr>
+  <tr>
+    <td class="tg-isb1">shiftKey</td>
+    <td id='shiftKey' class="tg-isb1"></td>
+    <td class="tg-isb1"></td>
+  </tr>
+  <tr>
+    <td class="tg-gq9a">metaKey</td>
+    <td id='metaKey' class="tg-gq9a"></td>
+    <td class="tg-gq9a"></td>
+  </tr>
+  <tr>
+    <td class="tg-isb1">code</td>
+    <td id='code' class="tg-isb1"></td>
+    <td class="tg-isb1"></td>
+  </tr>
+  <tr>
+    <td class="tg-gq9a">charCode</td>
+    <td id='charCode' class="tg-gq9a"></td>
+    <td class="tg-gq9a">deprecated, avoid using this<br></td>
+  </tr>
+  <tr>
+    <td class="tg-isb1">key</td>
+    <td id='key' class="tg-isb1"></td>
+    <td class="tg-isb1"></td>
+  </tr>
+  <tr>
+    <td class="tg-gq9a">keyCode</td>
+    <td id='keyCode' class="tg-gq9a"></td>
+    <td class="tg-gq9a">deprecated, avoid using this</td>
+  </tr>
+  <tr>
+    <td class="tg-isb1">type</td>
+    <td id='type' class="tg-isb1"></td>
+    <td class="tg-isb1"></td>
+  </tr>
+</table></div>
+
+<script id="jsbin-javascript">
+var display = document.getElementById('display');
+
+var altKey = document.getElementById('altKey');
+var ctrlKey = document.getElementById('ctrlKey');
+var shiftKey = document.getElementById('shiftKey');
+var metaKey = document.getElementById('metaKey');
+
+var code = document.getElementById('code');
+var charCode = document.getElementById('charCode');
+var key = document.getElementById('key');
+var keyCode = document.getElementById('keyCode');
+var type = document.getElementById('type');
+
+document.addEventListener('keypress', (e) => {
+  display.textContent = e.key;
+  altKey.textContent = e.altKey;
+  ctrlKey.textContent = e.ctrlKey;
+  shiftKey.textContent = e.shiftKey;
+  metaKey.textContent = e.metaKey;
+  code.textContent = e.code;
+  charCode.textContent = e.charCode;
+  key.textContent = e.key;
+  keyCode.textContent = e.keyCode;
+  type.textContent = e.type;
+});
+</script>
+</body>
+</html>
