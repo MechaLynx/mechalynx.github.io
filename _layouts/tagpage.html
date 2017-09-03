@@ -1,0 +1,9 @@
+---
+layout: main
+---
+
+<div class="tagpage-header"> Posts and updates tagged <div class="tag">{{page.tag}}</div>:</div>
+
+{% for post in site.tags[page.tag] %}
+    {% include post-archived-inline.html %}
+{% endfor %}

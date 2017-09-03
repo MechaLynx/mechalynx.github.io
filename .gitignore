@@ -7,11 +7,11 @@ Session.vim
 *~
 
 # ignore tag files
-tags
-.tags
+/tags
+/.tags
 
 # ignore todo
-[tToOdDoO]*
+[tT][oO][dD][oO]*
 
 # ignore rubocop
 .rubocop.yml
