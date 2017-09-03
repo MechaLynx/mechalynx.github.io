@@ -1,0 +1,29 @@
+<section class="project-frame">
+    {% if project.image == nil or project.image == "" %}
+        {% for t in project.tags %}
+            {% if site.data.lang contains t %}
+                <div class="project-image placeholder-image {{site.data.lang[t]}}">{{ project.image }}</div>
+                {% break %}
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <div class="project-image">{{ project.image }}</div>
+    {% endif %}
+    <div class="project-title">{{ project.title }}</div>
+    <div class="project-details"> {{ project.content }}
+    </div>
+    <div class="project-tags">
+        {% assign tags = project.tags %}
+        {% include tags.html linked_tags = false %}
+    </div>
+    <div class="project-links">
+        {% if project.repo %}
+            <a class="project-repo-link icon-link" href="{{project.repo}}" rel="nofollow">
+                <img src="/img/repo.svg"></img>
+            </a>
+        {% endif %}
+        {% if project.page %}
+            <a class="project-page-link" href="{{site.url}}{{project.page}}" rel="nofollow"><img src="/img/page.svg"></img></a>
+        {% endif %}
+    </div>
+</section>

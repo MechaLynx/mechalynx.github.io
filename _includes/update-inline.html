@@ -1,0 +1,24 @@
+<section class="update">
+
+    <div class="update-header">
+        <time datetime="{{ update.date }}">{{ update.date | date: "%Y-%m-%d"}}</time>
+                {% if update.categories contains 'posts' %}
+                    <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                {% endif %}
+    </div>
+        {% if update.categories contains 'posts' %}
+            <div class="update-title">
+                <a rel="nofollow" href="{{site.url}}{{update.url}}">{{ update.title }}</a>
+            </div>
+            {{update.summary}}
+        {% else %}
+            {% if update-title != "" and update-title != nil %}
+                <div class="update-title">
+                    {{ update.title }}
+                </div>
+            {% endif %}
+            {{ update.content }}
+        {% endif %}
+    {% assign tags = update.tags %}
+    {% include tags.html %}
+</section>

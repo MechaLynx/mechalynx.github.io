@@ -1,0 +1,11 @@
+---
+layout: main
+---
+
+{% include archive-nav.html %}
+
+{% assign sorted_posts = (site.updates | sort: 'date') %}
+{% for post in sorted_posts reversed %}
+    {% include update-archived-inline.html %}
+{% endfor %}
+

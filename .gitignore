@@ -1,0 +1,17 @@
+# ignore vim files
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+# ignore tag files
+tags
+.tags
+
+# ignore todo
+[tToOdDoO]*
+
+# ignore rubocop
+.rubocop.yml

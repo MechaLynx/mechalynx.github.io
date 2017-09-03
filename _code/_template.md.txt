@@ -1,0 +1,10 @@
+---
+title: "title.ext"
+repo: "https://github.com/user/repo"
+demo: "/demopage"
+page: "/page"
+preview: "IMAGE"
+tags: TAGS
+---
+
+DESCRIPTION

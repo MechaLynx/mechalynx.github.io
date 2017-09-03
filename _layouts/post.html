@@ -1,0 +1,69 @@
+---
+layout: main
+---
+
+<section class="post">
+    <div class="post-header">
+        <time datetime="{{ page.date }}">{{ page.date | date: "%Y-%m-%d"}}</time>
+    </div>
+    <article class="text-content">
+<pre>
+<h1>{{page.title}}</h1>
+{{ content }}
+</pre>
+</article>
+
+</section>
+
+{% include share.html %}
+
+{% comment %}
+    Taken from https://stackoverflow.com/a/28323813/2838033
+{% endcomment %}
+{% if page.related == "" or page.related == nil %}
+    {% assign random = site.time | date: "%s%N" | modulo: site.posts.size %}
+    {% assign size_adjusted = site.posts.size | minus: 1 %}
+        {% if site.posts[random].url == page.url and site.posts.size > 1 %}
+            {% if random == size_adjusted %}
+                {% assign random = random | minus: 1 %}
+            {% else %}
+                {% assign random = random | plus: 1 %}
+            {% endif %}
+        {% endif %}
+    {% assign relateddate = site.posts[random].date %}
+    {% assign relatedurl = site.posts[random].url %}
+    {% assign relatedsummary = site.posts[random].summary %}
+    {% assign relatedtitle = site.posts[random].title %}
+    {% assign relatedtags = site.posts[random].tags %}
+{% else %}
+    {% assign related = page.related %}
+{% endif %}
+
+{% if page.url != relatedurl or page.url != site.posts.first.url %}
+<div class="article-pickbox">
+    {% if page.url != relatedurl and site.posts.first.url != relatedurl %}
+    <div class="pickbox-related {% if random %}random{% endif %}">
+        <time datetime="{{ relateddate }}">{{ relateddate | date: "%Y-%m-%d"}}</time>
+        <div class="title"><a href="{{site.url}}{{relatedurl}}" rel="nofollow">{{relatedtitle}}</a></div>
+        <br/>
+        <div class="summary">{{relatedsummary}}</div>
+        <div class="tags">
+    {% assign tags = relatedtags %}
+    {% include tags.html %}
+    </div>
+    </div>
+    {% endif %}
+    {% if page.url != site.posts.first.url %}
+    <div class="pickbox-latest">
+        <time datetime="{{ site.posts.first.date }}">{{ site.posts.first.date | date: "%Y-%m-%d"}}</time>
+        <div class="title"><a href="{{site.url}}{{site.posts.first.url}}" rel="nofollow">{{site.posts.first.title}}</a></div>
+        <br/>
+        <div class="summary">{{site.posts.first.summary}}</div>
+        <div class="tags">
+    {% assign tags = site.posts.first.tags %}
+    {% include tags.html %}
+    </div>
+    </div>
+    {% endif %}
+</div>
+{% endif %}

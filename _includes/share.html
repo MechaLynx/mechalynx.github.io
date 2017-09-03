@@ -1,0 +1,12 @@
+<div class="share-comments">
+    {% if page.gh-comment-thread != nil %}
+        <div class="comments-link"><p>Have a <b>comment</b>? Visit this <a rel="nofollow" href="{{site.github-url}}/issues/{{page.gh-comment-thread}}">github issue</a>.</p></div>
+    {% endif %}
+<ul class="share-buttons">
+    <div><b>Share</b> this post:</div>
+    {% capture link_url %}{{site.url}}{{page.url}}{% endcapture %}
+    <li><a class="icon-link" rel="nofollow noreferrer noopener" href="https://twitter.com/intent/tweet?source={{link_url|uri_escape}}&text={{link_url|uri_escape}}" title="Tweet"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i><span class="sr-only">Tweet</span></a></li>
+  <li><a class="icon-link" rel="nofollow noreferrer noopener" href="https://plus.google.com/share?url={{link_url|uri_escape}}" title="Share on Google+"><i class="fa fa-google-plus-square fa-2x" aria-hidden="true"></i><span class="sr-only">Share on Google+</span></a></li>
+  <li><a class="icon-link" rel="nofollow noreferrer noopener" href="http://www.reddit.com/submit?url={{link_url|uri_escape}}&title={{page.title|uri_escape}}" title="Submit to Reddit"><i class="fa fa-reddit-square fa-2x" aria-hidden="true"></i><span class="sr-only">Submit to Reddit</span></a></li>
+</ul>
+</div>

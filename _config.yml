@@ -1,1 +1,21 @@
-theme: jekyll-theme-hacker
+---
+collections:
+  - updates
+  - code
+
+url: mechalynx.github.io
+title: "part of the local fauna"
+gems:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+sass:
+  sass_dir: _sass
+  style: compressed
+social:
+  name: MechaLynx
+  links:
+    - https://github.com/MechaLynx
+author: MechaLynx
+github-url: https://github.com/MechaLynx/mechalynx.github.io
+---

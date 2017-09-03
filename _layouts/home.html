@@ -1,0 +1,18 @@
+---
+layout: main
+---
+
+{% comment %}
+https://gist.github.com/BryanSchuetz/52012affd9318ba59e19a74639a8c16a
+{% endcomment %}
+{% assign sorted_all = "" | split: "" %}
+{% for post in site.posts %}
+    {% assign sorted_all = sorted_all | push: post %}
+{% endfor %}
+{% for update in site.updates %}
+    {% assign sorted_all = sorted_all | push: update %}
+{% endfor %}
+{% assign sorted_all = (sorted_all | sort: 'date') %}
+{% for update in sorted_all reversed limit:5 %}
+    {% include update-inline.html %}
+{% endfor %}

@@ -1,0 +1,17 @@
+---
+layout: main
+---
+
+<div class="policy-content">
+{% if page.error %}
+<h1 class="error">{{ page.error }}</h1>
+    {{ content }}
+{% endif %}
+{% if page.title %}
+<h1>{{ page.title }}</h1>
+    <div class="text">
+        {{ content }}
+    </div>
+{% endif %}
+
+</div>

@@ -1,0 +1,14 @@
+<div class="archive-nav">
+    {% assign navlinks = include.navlinks | split: "," %}
+    {% assign navtargets = include.navtargets | split: "," %}
+    {% for link in navlinks %}
+        {% capture targeturl %}{{ site.url }}/{{ navtargets[forloop.index0] | remove: ".html" }}{% endcapture %}
+        {% capture pageurl %}{{ site.url }}{{ page.url | remove: ".html" }}{% endcapture %}
+        <a
+            {% if pageurl == targeturl %} class="nav-current" {% endif %}
+        href="{{ targeturl }}">{{ link }}</a>
+        {% unless forloop.last %}
+            /
+        {% endunless %}
+    {% endfor %}
+</div>

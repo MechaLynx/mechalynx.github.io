@@ -1,0 +1,12 @@
+---
+layout: main
+---
+
+{% include code-nav.html %}
+
+{% for project in site.code %}
+    {% if project.tags contains 'web' %}
+        {% include project-inline.html %}
+    {% endif %}
+{% endfor %}
+

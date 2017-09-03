@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% include head.html %}
+
+<body>
+    <div class="wrapper">
+        {% include header.html %}
+        {% include menu.html %}
+        <div class="content">
+
+            {{ content | replace: '<a href="http', '<a rel="nofollow" href="http' }}
+
+        </div>
+        {% include footer.html %}
+    </div>
+</body>
+

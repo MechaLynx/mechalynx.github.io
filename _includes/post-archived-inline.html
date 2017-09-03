@@ -1,0 +1,8 @@
+<section class="archived-post">
+    <div class="archived-post-header">
+        <time datetime="{{ post.date }}">{{ post.date | date: "%Y-%m-%d"}}</time>
+    </div>
+    <div class="archived-post-title"><a href="{{site.url}}{{post.url}}" rel="nofollow">{{ post.title }}</a></div>
+    {% assign tags = post.tags %}
+    {% include tags.html %}
+</section>
