@@ -1,6 +1,6 @@
 ---
-title: "alnuminium.sh"
-repo: "https://github.com/MechaLynx/alnuminium.sh"
+title: "alnuminium"
+repo: "https://github.com/MechaLynx/alnuminium"
 tags: shell
 ---
 
