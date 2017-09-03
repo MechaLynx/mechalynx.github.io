@@ -3,7 +3,7 @@
     {% assign navtargets = include.navtargets | split: "," %}
     {% for link in navlinks %}
         {% capture targeturl %}{{ navtargets[forloop.index0] | remove: ".html" }}{% endcapture %}
-        {% capture pageurl %}{{ page.url | remove: ".html" }}{% endcapture %}
+        {% capture pageurl %}{{ page.url | remove: ".html" | split: "/" | last }}{% endcapture %}
         <a
             {% if pageurl == targeturl %} class="nav-current" {% endif %}
         href="{{ targeturl }}">{{ link }}</a>
