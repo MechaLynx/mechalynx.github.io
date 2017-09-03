@@ -8,7 +8,7 @@
     </div>
         {% if update.categories contains 'posts' %}
             <div class="update-title">
-                <a rel="nofollow" href="{{site.url}}{{update.url}}">{{ update.title }}</a>
+                <a rel="nofollow" href="{{update.url}}">{{ update.title }}</a>
             </div>
             {{update.summary}}
         {% else %}

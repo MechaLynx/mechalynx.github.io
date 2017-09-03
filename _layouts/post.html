@@ -44,7 +44,7 @@ layout: main
     {% if page.url != relatedurl and site.posts.first.url != relatedurl %}
     <div class="pickbox-related {% if random %}random{% endif %}">
         <time datetime="{{ relateddate }}">{{ relateddate | date: "%Y-%m-%d"}}</time>
-        <div class="title"><a href="{{site.url}}{{relatedurl}}" rel="nofollow">{{relatedtitle}}</a></div>
+        <div class="title"><a href="{{relatedurl}}" rel="nofollow">{{relatedtitle}}</a></div>
         <br/>
         <div class="summary">{{relatedsummary}}</div>
         <div class="tags">
@@ -56,7 +56,7 @@ layout: main
     {% if page.url != site.posts.first.url %}
     <div class="pickbox-latest">
         <time datetime="{{ site.posts.first.date }}">{{ site.posts.first.date | date: "%Y-%m-%d"}}</time>
-        <div class="title"><a href="{{site.url}}{{site.posts.first.url}}" rel="nofollow">{{site.posts.first.title}}</a></div>
+        <div class="title"><a href="{{site.posts.first.url}}" rel="nofollow">{{site.posts.first.title}}</a></div>
         <br/>
         <div class="summary">{{site.posts.first.summary}}</div>
         <div class="tags">

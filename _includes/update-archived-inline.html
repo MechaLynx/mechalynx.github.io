@@ -2,7 +2,7 @@
     <div class="archived-post-header">
         <time datetime="{{ post.date }}">{{ post.date | date: "%Y-%m-%d"}}</time>
     </div>
-    <div class="archived-post-title"><a href="{{site.url}}{{post.url}}" rel="nofollow">{{ post.title }}</a></div>
+    <div class="archived-post-title"><a href="{{post.url}}" rel="nofollow">{{ post.title }}</a></div>
     {{post.content}}
     {% assign tags = post.tags %}
     {% include tags.html %}

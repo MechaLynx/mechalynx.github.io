@@ -2,7 +2,7 @@
 	<div class="tags">
 		<ul>
 			{% for tag in tags %}
-             <li>{% if project != nil %}{{tag}}{% else %}<a href="{{site.url}}/tag/{{ tag }}.html">{{tag}}</a>{% endif %}</li>
+             <li>{% if project != nil %}{{tag}}{% else %}<a href="/tag/{{ tag }}.html">{{tag}}</a>{% endif %}</li>
 			{% endfor %}
 		</ul>
 	</div>

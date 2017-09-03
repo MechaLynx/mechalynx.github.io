@@ -5,4 +5,4 @@ sitemap: false
 user-agent: *
 disallow: /tag/
 disallow: /archive.html
-sitemap: {{ site.url }}/sitemap.xml
+sitemap: https://{{ site.url }}/sitemap.xml
