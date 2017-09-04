@@ -1,27 +1,27 @@
 @font-face {
-  font-family: 'DejaVuSansMonoBold';
-  src: url('/woff2/DejaVuSansMonoBold.woff2') format('woff2');
+  font-family: 'DejaVu Sans Mono';
+  src: local("DejaVu Sans Mono Bold"), url('/woff2/DejaVuSansMonoBold.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'DejaVuSansMonoBoldOblique';
-  src: url('/woff2/DejaVuSansMonoBoldOblique.woff2') format('woff2');
+  font-family: 'DejaVu Sans Mono';
+  src: local("DejaVu Sans Mono Bold Oblique"), url('/woff2/DejaVuSansMonoBoldOblique.woff2') format('woff2');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'DejaVuSansMonoBook';
-  src: url('/woff2/DejaVuSansMonoBook.woff2') format('woff2');
+  font-family: 'DejaVu Sans Mono';
+  src: local("DejaVu Sans Mono Book"), url('/woff2/DejaVuSansMonoBook.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'DejaVuSansMonoOblique';
-  src: url('/woff2/DejaVuSansMonoOblique.woff2') format('woff2');
+  font-family: 'DejaVu Sans Mono';
+  src: local("DejaVu Sans Mono Oblique"), url('/woff2/DejaVuSansMonoOblique.woff2') format('woff2');
   font-weight: normal;
   font-style: italic;
 }
